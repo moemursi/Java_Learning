@@ -5,9 +5,10 @@ public class Except {
     public static void main(String[] args) {
         int num = 0;
         int den = 0;
+        Scanner input = new Scanner(System.in);
+
         try {
             //scanner
-            Scanner input = new Scanner(System.in);
             System.out.println("Math calculator");
             //enter a numerator
             System.out.println("Enter a numerator: ");
@@ -18,12 +19,16 @@ public class Except {
             //calculate the quotient
             System.out.println("The quotient is: " + num / den);
             //close input
-            input.close();
+            
         } catch (ArithmeticException e) {
             System.out.println("Error: " + e.getMessage());
         }
         catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
+        }
+        finally {
+            System.out.println("Program complete");
+            input.close();
         }
         //PRODUCT IS
 
