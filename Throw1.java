@@ -1,7 +1,8 @@
-public class Throw {
-    import java.util.Scanner;
+import java.util.Scanner;
+public class Throw1 {
+    
 
-public class Except {
+
 
     public static void main(String[] args) {
         int num = 0;
