@@ -1,52 +1,34 @@
 import java.util.Scanner;
 public class Throw1 {
-    
-
-
-
+    //main method
     public static void main(String[] args) {
-        int num = 0;
-        int den = 0;
         Scanner input = new Scanner(System.in);
-
-        try {
-            //scanner
-            System.out.println("Math calculator");
-            //enter a numerator
-            System.out.println("Enter a numerator: ");
-            num = input.nextInt();
-            //enter a denominator
-            System.out.println("Enter a denominator: ");
-            den = input.nextInt();
-            //if den is 0
-            if (den == 0) {
-                //throw exception
-                throw new ArithmeticException("Cannot divide by zero");
-            }
-            //calculate the quotient
-            System.out.println("The quotient is: " + num / den);
-            //close input
-            
-        } catch (ArithmeticException e) {
-            System.out.println("Math Problem : " + e.getMessage());
+        int num = 0 ,den = 0;
+    //try block
+    try {
+        System.out.print("Enter a numerator: ");
+        num = input.nextInt();
+        System.out.print("Enter a denominator: ");
+        den = input.nextInt();
+        //if denominator is 0, throw exception
+        if (den == 0) {
+            throw new ArithmeticException("Denominator cannot be 0");
         }
-        catch (Exception e) {
-            e.printStackTrace();
+        //if denominator is not 0, print the result
+        else {
+            System.out.println("Result: " + num / den);
         }
-        finally {
-            System.out.println("Program complete");
-            input.close();
-        }
-        //PRODUCT IS
-
-        System.out.println("The product is: " + num * den);
-        // print operation done
-        System.out.println("Operation done");
+        
+    }catch (ArithmeticException e) {
+        System.out.println(e);
+    }
+    catch (Exception e) {
+        System.out.println("Invalid input");
+    }
+    finally {
+        System.out.println("Program terminated");
+        input.close();
+    }
     }
 
-    //end of main
-    }
-//end of class
-
-    
 }
